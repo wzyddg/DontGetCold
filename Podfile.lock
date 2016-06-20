@@ -1,0 +1,16 @@
+PODS:
+  - Alamofire (3.4.1)
+  - SwiftyJSON (2.3.2)
+  - XMLDictionary (1.4)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.4.0)
+  - SwiftyJSON (~> 2.3.2)
+  - XMLDictionary (~> 1.4)
+
+SPEC CHECKSUMS:
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  XMLDictionary: f9f51601ba76678b594ab485f2b00ec1fed23724
+
+COCOAPODS: 0.39.0
