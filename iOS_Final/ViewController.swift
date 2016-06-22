@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import WKProgressHUD
 
 class ViewController: UIViewController {
 
@@ -21,6 +22,8 @@ class ViewController: UIViewController {
 //            let data = JSON(data: res.data!)
 //            print(data)
 //        }
+        
+        var a = WKProgressHUD.showInView(self.view, withText: "正在前往努巴尼", animated: false)
         
         Alamofire.request(.GET, "https://api.thinkpage.cn/v3/weather/hourly.json", parameters: ["key":"2hhkacgmhyr8wu6a","location":"beijing","start":"0","hours":"24"], encoding: .URL, headers: nil).responseJSON{res in
             let data = JSON(data: res.data!)

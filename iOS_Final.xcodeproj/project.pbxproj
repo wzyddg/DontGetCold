@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		553E11611D1882A30079E59F /* NetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553E11601D1882A30079E59F /* NetManager.swift */; };
 		55BB7F0B1D1070CF00F50537 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BB7F0A1D1070CF00F50537 /* AppDelegate.swift */; };
 		55BB7F0D1D1070CF00F50537 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BB7F0C1D1070CF00F50537 /* ViewController.swift */; };
 		55BB7F101D1070CF00F50537 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55BB7F0E1D1070CF00F50537 /* Main.storyboard */; };
@@ -29,6 +30,8 @@
 /* Begin PBXFileReference section */
 		19C5D043178131C1856A68E2 /* Pods-iOS_Final.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Final.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Final/Pods-iOS_Final.debug.xcconfig"; sourceTree = "<group>"; };
 		27B2417E7FE0D73630FF8B88 /* Pods-iOS_Final.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Final.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Final/Pods-iOS_Final.release.xcconfig"; sourceTree = "<group>"; };
+		553E11601D1882A30079E59F /* NetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetManager.swift; sourceTree = "<group>"; };
+		553E11621D1A8A6E0079E59F /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 		55BB7F071D1070CF00F50537 /* 别冻着.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "别冻着.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55BB7F0A1D1070CF00F50537 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55BB7F0C1D1070CF00F50537 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +73,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		553E115F1D18824F0079E59F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				553E11601D1882A30079E59F /* NetManager.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		55BB7EFE1D1070CF00F50537 = {
 			isa = PBXGroup;
 			children = (
@@ -93,12 +104,14 @@
 		55BB7F091D1070CF00F50537 /* iOS_Final */ = {
 			isa = PBXGroup;
 			children = (
+				553E115F1D18824F0079E59F /* Model */,
 				55BB7F0A1D1070CF00F50537 /* AppDelegate.swift */,
 				55BB7F0C1D1070CF00F50537 /* ViewController.swift */,
 				55BB7F0E1D1070CF00F50537 /* Main.storyboard */,
 				55BB7F111D1070CF00F50537 /* Assets.xcassets */,
 				55BB7F131D1070CF00F50537 /* LaunchScreen.storyboard */,
 				55BB7F161D1070CF00F50537 /* Info.plist */,
+				553E11621D1A8A6E0079E59F /* Bridge.h */,
 			);
 			path = iOS_Final;
 			sourceTree = "<group>";
@@ -274,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55BB7F0D1D1070CF00F50537 /* ViewController.swift in Sources */,
+				553E11611D1882A30079E59F /* NetManager.swift in Sources */,
 				55BB7F0B1D1070CF00F50537 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -86,10 +86,12 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-iOS_Final/Alamofire.framework"
   install_framework "Pods-iOS_Final/SwiftyJSON.framework"
+  install_framework "Pods-iOS_Final/WKProgressHUD.framework"
   install_framework "Pods-iOS_Final/XMLDictionary.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-iOS_Final/Alamofire.framework"
   install_framework "Pods-iOS_Final/SwiftyJSON.framework"
+  install_framework "Pods-iOS_Final/WKProgressHUD.framework"
   install_framework "Pods-iOS_Final/XMLDictionary.framework"
 fi
