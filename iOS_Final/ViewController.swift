@@ -7,28 +7,28 @@
 //
 
 import UIKit
-import Alamofire
 import SwiftyJSON
 import WKProgressHUD
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,WeatherQueryCallback {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("上海".stringByAddingPercentEscapesUsingEncoding(CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(CFStringEncodings.GB_18030_2000.rawValue))))
+//        print("上海".stringByAddingPercentEscapesUsingEncoding(CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(CFStringEncodings.GB_18030_2000.rawValue))))
+//        print("上海".stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet()))
         
-//        Alamofire.request(.GET, "https://github.com/Alamofire/Alamofire").responseJSON{res in
+        
+//        let progressHUD = WKProgressHUD.showInView(self.view, withText: "正在获取天气信息", animated: false)
+//        progressHUD.dismiss(true)
+        
+//        Alamofire.request(.GET, "https://api.thinkpage.cn/v3/weather/hourly.json", parameters: ["key":"2hhkacgmhyr8wu6a","location":"beijing","start":"0","hours":"24"], encoding: .URL, headers: nil).responseJSON{res in
 //            let data = JSON(data: res.data!)
 //            print(data)
 //        }
         
-        var a = WKProgressHUD.showInView(self.view, withText: "正在前往努巴尼", animated: false)
-        
-        Alamofire.request(.GET, "https://api.thinkpage.cn/v3/weather/hourly.json", parameters: ["key":"2hhkacgmhyr8wu6a","location":"beijing","start":"0","hours":"24"], encoding: .URL, headers: nil).responseJSON{res in
-            let data = JSON(data: res.data!)
-            print(data)
-        }
+        var a = WeatherQuerier()
+        a.getSinaWeatherDetail(self)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -37,6 +37,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func doGetWeatherJSON(info: JSON) {
+        print(info)
+        print(info["results"][0]["now"]["wind_direction"])
+    }
 
 }
 
