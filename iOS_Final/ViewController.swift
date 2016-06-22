@@ -39,7 +39,6 @@ class ViewController: UIViewController,WeatherQueryCallback {
 
     func doGetWeatherJSON(info: JSON) {
         print(info)
-        print(info["results"][0]["now"]["wind_direction"])
     }
 
 }

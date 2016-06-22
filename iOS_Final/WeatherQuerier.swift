@@ -29,6 +29,8 @@ class WeatherQuerier {
     let GB180302000StringEncoding =  CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(CFStringEncodings.GB_18030_2000.rawValue))
     var dataDelegate: WeatherQueryCallback?
     
+    let sinaKeyDictionary = ["chy_shuoming":"穿衣说明","tgd1":"日间体感温度","power1":"日间风级","zwx":"紫外线","gm":"感冒","direction1":"日间风向","status2":"夜间天气状况","ktk":"空调","ssd":"体感指数","temperature1":"日间温度","power2":"夜间风级","udatetime":"数据更新时间","direction2":"夜间风向","temperature2":"夜间温度","xcz":"洗车","pollution":"污染指数","yd":"运动","tgd2":"夜间体感温度","status1":"雷阵雨","chy":"穿衣指南"]
+    
     func getCurrentWeather(delegate : WeatherQueryCallback) {
         self.dataDelegate = delegate
 //        Alamofire.request(.GET, currentWeatherURL, parameters: thinkPageParameters, encoding: .URL , headers: nil).response{response in
@@ -116,13 +118,19 @@ class WeatherQuerier {
     
     func getSinaWeatherDetail(delegate : WeatherQueryCallback) {
         self.dataDelegate = delegate
-
-//        Alamofire.request(.GET, getEncodedURL(siniaWeatherURL, parameters: ["city":"上海","password":"DJOYnieT8234jlsK","day":"0"], encoding: GB180302000StringEncoding)).response{response in
-//            print(String(data: response.2!, encoding:NSUTF8StringEncoding))
-//        }
+        let xmlParser = XMLDictionaryParser()
         
-        let res = "<?xmlversion=\"1.0\"encoding=\"UTF-8\"?><!--publishedat2016-06-2302:00:25--><Profiles><Weather><city>上海</city><status1>雷阵雨</status1><status2>多云</status2><figure1>leizhenyu</figure1><figure2>duoyun</figure2><direction1>西南风</direction1><direction2>西南风</direction2><power1>≤3</power1><power2>≤3</power2><temperature1>33</temperature1><temperature2>26</temperature2><ssd>8</ssd><tgd1>30</tgd1><tgd2>30</tgd2><zwx>1</zwx><ktk>2</ktk><pollution>3</pollution><xcz>5</xcz><zho></zho><diy></diy><fas></fas><chy>1</chy><zho_shuoming>暂无</zho_shuoming><diy_shuoming>暂无</diy_shuoming><fas_shuoming>暂无</fas_shuoming><chy_shuoming>短袖衫、短裙、短裤、薄型T恤衫、敞领短袖棉衫</chy_shuoming><pollution_l>轻度</pollution_l><zwx_l>最弱</zwx_l><ssd_l>较热</ssd_l><fas_l>暂无</fas_l><zho_l>暂无</zho_l><chy_l>薄短袖类</chy_l><ktk_l>适宜开启(制冷)</ktk_l><xcz_l>不适宜</xcz_l><diy_l>暂无</diy_l><pollution_s>对空气污染物扩散无明显影响</pollution_s><zwx_s>紫外线最弱</zwx_s><ssd_s>户外活动不适宜在中午前后展开。</ssd_s><ktk_s>适宜开启空调</ktk_s><xcz_s>洗车后当日有降水、大风或沙尘天气，不适宜洗车</xcz_s><gm>2</gm><gm_l>易发期</gm_l><gm_s>天气闷热，注意预防热伤风；</gm_s><yd>5</yd><yd_l>不适宜</yd_l><yd_s>天气闷热，不适宜户外运动；</yd_s><savedate_weather>2016-06-23</savedate_weather><savedate_life>2016-06-23</savedate_life><savedate_zhishu>2016-06-23</savedate_zhishu><udatetime>2016-06-2217:10:00</udatetime></Weather></Profiles>"
-        
+        Alamofire.request(.GET, getEncodedURL(siniaWeatherURL, parameters: ["city":"上海","password":"DJOYnieT8234jlsK","day":"0"], encoding: GB180302000StringEncoding)).response{response in
+            var dic = xmlParser.dictionaryWithData(response.2)
+            var content = dic["Weather"] as! [String: AnyObject]
+            if let tmp = content["chy_shuoming"]{
+                content.removeValueForKey("chy_shuoming")
+                content["chy_s"] = tmp
+            }
+            let res = JSON(dictionaryLiteral: ("Weather",content))
+            
+            self.dataDelegate?.doGetWeatherJSON(res)
+        }
     }
     
     func getSinaLifeSuggestion(delegate : WeatherQueryCallback) {
