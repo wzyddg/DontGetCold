@@ -121,9 +121,9 @@
 		55BB7F091D1070CF00F50537 /* iOS_Final */ = {
 			isa = PBXGroup;
 			children = (
-				553E11641D1B0C7A0079E59F /* Supporting */,
-				553E115F1D18824F0079E59F /* Model */,
 				553E11631D1B0C650079E59F /* ViewController */,
+				553E115F1D18824F0079E59F /* Model */,
+				553E11641D1B0C7A0079E59F /* Supporting */,
 			);
 			path = iOS_Final;
 			sourceTree = "<group>";

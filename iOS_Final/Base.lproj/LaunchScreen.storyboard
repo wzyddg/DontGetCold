@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,7 +16,73 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="snow" translatesAutoresizingMaskIntoConstraints="NO" id="ggP-eb-vws">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYJ-06-ZOA">
+                                <rect key="frame" x="219" y="483" width="163" height="87"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="别 冻 着" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVq-T4-377">
+                                        <rect key="frame" x="63" y="0.0" width="99" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't Get Cold" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZ6-Ez-g0B">
+                                        <rect key="frame" x="62" y="34" width="101" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5" translatesAutoresizingMaskIntoConstraints="NO" id="Kb9-ch-xKg">
+                                        <rect key="frame" x="0.0" y="0.0" width="52" height="52"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="52" id="6ad-O8-zyz"/>
+                                            <constraint firstAttribute="height" constant="52" id="wHO-2k-2vq"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QSU-gZ-tUB">
+                                        <rect key="frame" x="0.0" y="57" width="163" height="1"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="19H-SK-Mbb"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="综合天气预报软件" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UeM-I9-JSm">
+                                        <rect key="frame" x="2" y="63" width="160" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="UeM-I9-JSm" firstAttribute="top" secondItem="QSU-gZ-tUB" secondAttribute="bottom" constant="5" id="0RQ-4i-uuQ"/>
+                                    <constraint firstItem="QSU-gZ-tUB" firstAttribute="top" secondItem="dZ6-Ez-g0B" secondAttribute="bottom" constant="5" id="2LR-CH-mKf"/>
+                                    <constraint firstItem="Kb9-ch-xKg" firstAttribute="leading" secondItem="ZYJ-06-ZOA" secondAttribute="leading" id="4M4-gQ-htJ"/>
+                                    <constraint firstItem="dZ6-Ez-g0B" firstAttribute="bottom" secondItem="Kb9-ch-xKg" secondAttribute="bottom" id="4XK-XC-2TO"/>
+                                    <constraint firstItem="dZ6-Ez-g0B" firstAttribute="leading" secondItem="Kb9-ch-xKg" secondAttribute="trailing" constant="10" id="5cO-Yx-385"/>
+                                    <constraint firstAttribute="bottom" secondItem="UeM-I9-JSm" secondAttribute="bottom" id="88V-ez-fY0"/>
+                                    <constraint firstAttribute="trailing" secondItem="QSU-gZ-tUB" secondAttribute="trailing" id="8Cl-8Q-SHi"/>
+                                    <constraint firstItem="Kb9-ch-xKg" firstAttribute="top" secondItem="ZYJ-06-ZOA" secondAttribute="top" id="Arc-4K-w7g"/>
+                                    <constraint firstItem="CVq-T4-377" firstAttribute="top" secondItem="Kb9-ch-xKg" secondAttribute="top" id="Clq-h5-otL"/>
+                                    <constraint firstItem="UeM-I9-JSm" firstAttribute="centerX" secondItem="ZYJ-06-ZOA" secondAttribute="centerX" id="D75-EH-Ge2"/>
+                                    <constraint firstAttribute="trailing" secondItem="dZ6-Ez-g0B" secondAttribute="trailing" id="L0Y-hf-2xa"/>
+                                    <constraint firstItem="QSU-gZ-tUB" firstAttribute="leading" secondItem="ZYJ-06-ZOA" secondAttribute="leading" id="joe-jf-5bL"/>
+                                    <constraint firstItem="CVq-T4-377" firstAttribute="centerX" secondItem="dZ6-Ez-g0B" secondAttribute="centerX" id="s4q-1p-SJv"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ggP-eb-vws" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="2cy-dE-mTA"/>
+                            <constraint firstItem="ZYJ-06-ZOA" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="AGA-Jt-AiI"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="ZYJ-06-ZOA" secondAttribute="bottom" constant="30" id="NGZ-oW-jVd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ggP-eb-vws" secondAttribute="trailing" constant="-20" id="TrE-Cg-5Ub"/>
+                            <constraint firstItem="ggP-eb-vws" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="gL3-Wy-1n6"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="ggP-eb-vws" secondAttribute="bottom" id="wW2-MN-GsK"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -23,4 +90,8 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="5" width="180" height="180"/>
+        <image name="snow" width="5268" height="3609"/>
+    </resources>
 </document>
