@@ -53,6 +53,7 @@ class FirstController: UIViewController,WeatherQueryCallback {
         
         let data = info["results"][0]
         cityNameLabel.text = data["location"]["name"].string
+        NSUserDefaults.standardUserDefaults().setObject(data["location"]["name"].string, forKey: "DontGetColdCity")
         weatherImageView.image = UIImage(named: data["now"]["code"].string!)
         weatherTextLabel.text = data["now"]["text"].string
         temperatureLabel.text = data["now"]["temperature"].string! + "°C"
@@ -79,6 +80,8 @@ class FirstController: UIViewController,WeatherQueryCallback {
     
     @IBAction func moreButtonClicked(sender: AnyObject) {
         print("more")
+        let moreVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MoreFunctionController") as! MoreFunctionController
+        self.navigationController?.pushViewController(moreVC, animated: true)
     }
     
     func reload() {

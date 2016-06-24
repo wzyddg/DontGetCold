@@ -29,7 +29,7 @@ class WeatherQuerier {
     let GB180302000StringEncoding =  CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(CFStringEncodings.GB_18030_2000.rawValue))
     var dataDelegate: WeatherQueryCallback?
     
-    let sinaKeyDictionary = ["chy_shuoming":"穿衣说明","tgd1":"日间体感温度","power1":"日间风级","zwx":"紫外线","gm":"感冒","direction1":"日间风向","status2":"夜间天气状况","ktk":"空调","ssd":"体感指数","temperature1":"日间温度","power2":"夜间风级","udatetime":"数据更新时间","direction2":"夜间风向","temperature2":"夜间温度","xcz":"洗车","pollution":"污染指数","yd":"运动","tgd2":"夜间体感温度","status1":"雷阵雨","chy":"穿衣指南"]
+    let sinaKeyDictionary = ["chy_s":"穿衣说明","tgd1":"日间体感温度","power1":"日间风级","zwx":"紫外线","gm":"感冒","direction1":"日间风向","status2":"夜间天气状况","ktk":"空调","ssd":"体感指数","temperature1":"日间温度","power2":"夜间风级","udatetime":"数据更新时间","direction2":"夜间风向","temperature2":"夜间温度","xcz":"洗车","pollution":"污染指数","yd":"运动","tgd2":"夜间体感温度","status1":"雷阵雨","chy":"穿衣指南"]
     
     func getCurrentWeather(delegate : WeatherQueryCallback) {
         self.dataDelegate = delegate
