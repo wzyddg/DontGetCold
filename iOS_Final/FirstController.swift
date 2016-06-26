@@ -32,11 +32,15 @@ class FirstController: UIViewController,WeatherQueryCallback {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.setToolbarHidden(true, animated: false)
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.navigationController
         reload()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        self.navigationController?.setToolbarHidden(true, animated: false)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,7 +85,7 @@ class FirstController: UIViewController,WeatherQueryCallback {
     @IBAction func moreButtonClicked(sender: AnyObject) {
         print("more")
         let moreVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MoreFunctionController") as! MoreFunctionController
-        self.navigationController?.pushViewController(moreVC, animated: true)
+        self.navigationController?.pushViewController(moreVC, animated: false)
     }
     
     func reload() {
